@@ -1,0 +1,381 @@
+@font-face {
+  font-family: "Reem Kufi";
+
+  font-weight: 200 800;
+  font-style: normal;
+  src: url("ReemKufi-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  font-family: "Reem Kufi", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --b-width: 4px;
+  --white: antiquewhite;
+  --black: #1a1a1a;
+  --section-pad-x: 4rem;
+  --section-pad-y: 2rem;
+  font-size: 20px;
+}
+
+/* #region Global Styles */
+/* =============================================== */
+
+svg {
+  height: 1em;
+  width: auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+a.unstyled,
+.unstyled a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+}
+
+.frame {
+  outline: var(--b-width) solid var(--black);
+  padding: 2rem;
+  position: relative;
+  box-shadow: -1rem -1rem var(--black);
+}
+
+/* .frame::after {
+  content: "";
+  position: absolute;
+  outline: var(--b-width) solid var(--black);
+  width: 100%;
+  height: 100%;
+  left: -1rem;
+  top: -1rem;
+} */
+/* #endregion Global Styles */
+
+/* =============================================== */
+/* #region Nav Bar Styling */
+/* =============================================== */
+
+nav {
+  padding: 1rem;
+  padding-right: 2rem;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-end;
+}
+
+nav .icon {
+  margin-right: auto;
+  height: 2.5rem;
+  width: auto;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+/* #endregion Nav Bar Styling */
+/* #region Header */
+/* =============================================== */
+
+header {
+  padding: var(--section-pad-y) var(--section-pad-x);
+}
+
+header .frame {
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+header h1 {
+  text-align: right;
+  font-size: 3.5rem;
+  z-index: 10;
+  mix-blend-mode: difference;
+}
+
+header h2 {
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+header .bg {
+  position: absolute;
+}
+
+/* #endregion Header */
+/* #region Main*/
+/* =============================================== */
+
+main > section {
+  padding: var(--section-pad-y) var(--section-pad-x);
+  min-height: 30rem;
+}
+
+main h1 {
+  margin-bottom: 1rem;
+}
+#projects h1 {
+  margin-bottom: 2rem;
+}
+
+/* #endregion Main */
+/* =============================================== */
+/* #region About*/
+/* =============================================== */
+
+#about p {
+  font-size: 1.5rem;
+}
+
+#about .contents {
+  padding: 2rem;
+}
+
+#about .hover-doodle {
+  float: right;
+}
+
+/* #endregion About */
+/* =============================================== */
+/* #region Project Card*/
+/* =============================================== */
+.project {
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  height: 20rem;
+}
+
+.project img {
+  width: calc(100% / 3);
+  object-fit: cover;
+
+  will-change: contents;
+  transition: width 200ms ease-in-out;
+}
+.project img:hover {
+  width: calc(200% / 3);
+}
+
+.project .right-container {
+  padding: 2rem;
+  min-width: 15rem;
+  flex: 1 1 auto;
+  border-left: var(--b-width) solid var(--black);
+}
+
+.info .links {
+  display: flex;
+  justify-content: right;
+  gap: 1rem;
+  font-size: 1.75rem;
+  margin: 0.5rem 0;
+}
+
+.links a {
+  color: inherit;
+}
+
+/* #endregion Project Card */
+
+/* #region Stack*/
+/* =============================================== */
+
+/* For iteratively styling */
+[data-n="1"] {
+  --n: 1;
+}
+[data-n="2"] {
+  --n: 2;
+}
+[data-n="3"] {
+  --n: 3;
+}
+[data-n="4"] {
+  --n: 4;
+}
+[data-n="5"] {
+  --n: 5;
+}
+[data-n="6"] {
+  --n: 6;
+}
+
+.stack ul {
+  padding-left: 0;
+}
+
+.stack li {
+  transform: translateX(0);
+  transition: 200ms ease-in;
+  list-style: none;
+}
+
+.stack li::before {
+  display: inline-block;
+  background: var(--black);
+  height: 0.5rem;
+  width: 0.5rem;
+  content: "";
+
+  margin-right: 1rem;
+  transition: margin;
+  transition: 200ms ease-in;
+}
+/* .stack ul:hover li::before {
+  width: calc((var(--n) - 1) * 1.5rem + 0.5rem);
+  transform-origin: left;
+} */
+
+.stack ul:hover li::before {
+  width: 3rem;
+  transform-origin: right;
+}
+
+.stack ul:hover li {
+  transform: translateX(calc(var(--n) * 1.5rem - 1.5rem));
+}
+
+/* #endregion Stack */
+
+/* #region Contact*/
+/* =============================================== */
+
+#contact .contents {
+  display: flex;
+}
+
+.blob {
+  width: 6rem;
+  height: 6rem;
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blob svg {
+  font-size: 3rem;
+}
+/* #endregion Contact */
+
+/* #region Footer*/
+/* =============================================== */
+
+footer a {
+  background-color: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+/* #region Contact*/
+/* =============================================== */
+
+/* #endregion Contact */
+
+/* #region Animations*/
+/* =============================================== */
+
+.fish {
+  position: absolute;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  bottom: -2rem;
+  right: -2rem;
+  height: 15rem;
+  transform-origin: top left;
+  animation: rotate 5s infinite cubic-bezier(0.5, 0, 0.4, 1);
+}
+
+.fish.a {
+  height: 18rem;
+  animation-delay: 1s;
+  animation-duration: 6s;
+}
+
+.fish.c {
+  transform: scale(-1);
+  animation-delay: -0.5s;
+}
+
+.fish.d {
+  transform: scaleX(-1);
+  animation-direction: reverse;
+  left: 0;
+  height: 12rem;
+  bottom: -12rem;
+  padding: 0;
+  animation-duration: 4.5s;
+}
+
+.ripple,
+.ripple::after,
+.ripple::before {
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  content: "";
+  height: 5rem;
+  width: 5rem;
+  border: 4px solid var(--black);
+  border-radius: 100%;
+  animation: ripple 2s infinite cubic-bezier(0.65, 0, 0.34, 1);
+}
+
+.ripple::after {
+  animation-delay: 100ms;
+}
+
+.ripple::before {
+  animation-delay: 200ms;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    scale: 0.25;
+  }
+
+  to {
+    opacity: 0;
+    scale: 1.5;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    rotate: 0deg;
+  }
+  0% {
+    rotate: 360deg;
+  }
+}
+/* #endregion Animations*/
