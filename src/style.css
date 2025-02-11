@@ -41,9 +41,6 @@ a.unstyled,
   color: inherit;
 }
 
-body {
-}
-
 .frame {
   outline: var(--b-width) solid var(--black);
   position: relative;
@@ -75,13 +72,22 @@ nav {
   padding: 1rem;
   padding-right: 2rem;
   display: flex;
+  align-items: first baseline;
+}
+
+nav h1 {
+  margin-right: auto;
+  line-height: 1em;
+}
+
+nav .links {
+  display: flex;
   gap: 4rem;
-  align-items: flex-end;
 }
 
 nav .icon {
-  margin-right: auto;
   height: 2.5rem;
+  margin-right: 1rem;
   width: auto;
 }
 
@@ -175,7 +181,7 @@ main h1 {
   display: flex;
   align-items: stretch;
   padding: 0;
-  height: 20rem;
+  height: 21rem;
   flex: 1 0 26rem;
 }
 
@@ -273,12 +279,22 @@ main h1 {
 
 #contact .contents {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 4rem;
+  padding-top: 3rem;
 }
 
 .blob {
-  width: 6rem;
-  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blob svg {
+  font-size: 3rem;
+  width: 8rem;
+  height: 8rem;
+  padding: 1rem;
   color: var(--white);
   background-color: var(--black);
   border-radius: 0.5rem;
@@ -288,11 +304,12 @@ main h1 {
   justify-content: center;
 }
 
-.blob svg {
-  font-size: 3rem;
+.blob > div:last-child {
+  margin-top: 4px;
+  font-size: 2rem;
 }
 
-#contact a:nth-child(2) {
+/* #contact a:nth-child(2) {
   margin-top: 6rem;
 }
 
@@ -302,7 +319,7 @@ main h1 {
 
 #contact a:nth-child(4) {
   margin-top: 8rem;
-}
+} */
 /* #endregion Contact */
 
 /* #region Footer*/
@@ -372,24 +389,56 @@ footer a {
   align-items: center;
   position: absolute;
   content: "";
-  height: 5rem;
-  width: 5rem;
+  height: var(--ripple-size);
+  width: var(--ripple-size);
   outline: 4px solid var(--black);
   border-radius: 100%;
-  animation: ripple 2.25s infinite cubic-bezier(0.65, 0, 0.34, 1);
+  animation: ripple infinite ease-in-out;
+  animation-delay: var(--delay1);
+  animation-duration: var(--duration);
 }
 
 .ripple {
+  --ripple-size: 6rem;
+  --delay1: 0ms;
+  --delay2: 300ms;
+  --delay3: 1000ms;
+  --duration: 3.5s;
   translate: -50% -50%;
   transition: all 200ms ease-out;
 }
 
 .ripple::after {
-  animation-delay: 200ms;
+  animation-delay: var(--delay2);
 }
 
 .ripple::before {
-  animation-delay: 600ms;
+  animation-delay: var(--delay3);
+}
+
+.ripple.follow {
+  bottom: -6rem;
+  left: 0;
+}
+
+.ripple.fixed1 {
+  --ripple-size: 10rem;
+  --delay1: 300ms;
+  --delay2: 1200ms;
+  --delay3: 2000ms;
+  --duration: 5s;
+  top: 1rem;
+  right: -7rem;
+}
+
+.ripple.fixed2 {
+  --ripple-size: 16rem;
+  --delay1: 1000ms;
+  --delay2: 1900ms;
+  --delay3: 2800ms;
+  --duration: 5s;
+  left: 0rem;
+  bottom: -16rem;
 }
 
 @keyframes ripple {
