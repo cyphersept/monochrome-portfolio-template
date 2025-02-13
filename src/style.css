@@ -78,6 +78,7 @@ nav {
 nav h1 {
   margin-right: auto;
   line-height: 1em;
+  font-size: 2rem;
 }
 
 nav .links {
@@ -86,7 +87,7 @@ nav .links {
 }
 
 nav .icon {
-  height: 2.5rem;
+  height: 2rem;
   margin-right: 1rem;
   width: auto;
 }
@@ -116,6 +117,7 @@ header .frame .contents {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  will-change: contents;
 }
 
 header h1 {
@@ -150,16 +152,86 @@ main h1 {
 /* #region About*/
 /* =============================================== */
 
-#about p {
+#about {
   font-size: 1.5rem;
+  min-height: fit-content;
 }
 
 #about .contents {
+  display: flex;
+  position: relative;
+}
+
+#about .frame {
+  background-color: var(--white);
+  max-width: calc(200% / 3);
+  height: unset;
   padding: 2rem;
+  flex: 2 0 10rem;
 }
 
 #about .hover-doodle {
   float: right;
+  flex: 1 0 10rem;
+}
+
+.fish-carousel {
+  --duration: 30s;
+  bottom: 30%;
+  display: flex;
+  width: 100vw;
+  overflow: hidden;
+  will-change: transform;
+  position: absolute;
+  margin-left: -5rem;
+  z-index: -10;
+}
+
+.fish-carousel.offset {
+  transform: translateY(200%);
+  animation-delay: -2s;
+}
+
+.fish-carousel.offset ul {
+  animation-delay: calc(var(--duration) / -2 + 1s);
+}
+
+.fish-carousel ul {
+  list-style-type: none;
+  display: flex;
+  row-gap: 1rem;
+  padding-left: 0;
+  font-size: 1.5rem;
+  animation: move var(--duration) linear infinite;
+}
+
+.fish-carousel li {
+  background-color: var(--black);
+  color: var(--white);
+  position: relative;
+  margin: 0 1.75em;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  white-space: nowrap;
+}
+
+.fish-carousel li::before,
+.fish-carousel li::after {
+  width: 2.4em;
+  position: absolute;
+  z-index: -10;
+}
+
+.fish-carousel li::before {
+  content: url(./img/fishhead.svg);
+  left: 0;
+  transform: translate(-70%, -0.55em);
+}
+
+.fish-carousel li::after {
+  content: url(./img/fishtail.svg);
+  right: 0;
+  transform: translate(95%, -0.65em);
 }
 
 /* #endregion About */
@@ -198,6 +270,16 @@ main h1 {
 }
 .project img:hover {
   max-width: 100%;
+}
+
+.project iframe {
+  max-width: calc(60% / var(--scalar));
+  height: calc(100% / var(--scalar));
+  transform: scale(var(--scalar));
+  outline: none;
+  border: none;
+  border-right: calc(var(--b-width) / var(--scalar)) solid var(--black);
+  transform-origin: top left;
 }
 
 .project .contents {
@@ -277,39 +359,44 @@ main h1 {
 /* #region Contact*/
 /* =============================================== */
 
+#contact h1 {
+  margin-bottom: 2rem;
+}
+
 #contact .contents {
   display: flex;
-  justify-content: center;
-  gap: 4rem;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
   padding-top: 3rem;
 }
 
 .blob {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 4rem;
+  overflow: visible;
 }
 
 .blob svg {
-  font-size: 3rem;
+  aspect-ratio: 1;
   width: 8rem;
-  height: 8rem;
+  height: auto;
   padding: 1rem;
   color: var(--white);
   background-color: var(--black);
   border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .blob > div:last-child {
   margin-top: 4px;
-  font-size: 2rem;
+  font-size: clamp(1rem, 3.5vw, 3rem);
+  text-align: center;
 }
 
-/* #contact a:nth-child(2) {
+#contact a:nth-child(2) {
   margin-top: 6rem;
 }
 
@@ -319,7 +406,7 @@ main h1 {
 
 #contact a:nth-child(4) {
   margin-top: 8rem;
-} */
+}
 /* #endregion Contact */
 
 /* #region Footer*/
@@ -343,17 +430,14 @@ footer a {
 /* #region Animations*/
 /* =============================================== */
 
-.header .frame {
-}
-
 .fish {
   mix-blend-mode: difference;
   position: absolute;
   padding-left: 2rem;
-  padding-top: 2rem;
-  bottom: -2rem;
-  right: -2rem;
-  height: 15rem;
+  padding-top: 4rem;
+  bottom: -6rem;
+  right: -4rem;
+  height: 17rem;
   transform-origin: top left;
   animation: rotate 5s infinite cubic-bezier(0.5, 0, 0.4, 1);
 }
@@ -377,6 +461,16 @@ footer a {
   bottom: -12rem;
   padding: 0;
   animation-duration: 4.5s;
+}
+
+.fish.e {
+  scale: 1 -1;
+  transform-origin: bottom right;
+  bottom: 6rem;
+  left: -6rem;
+  padding-bottom: 9rem;
+  height: 25rem;
+  animation-duration: 9s;
 }
 
 .ripple,
@@ -466,4 +560,51 @@ footer a {
     rotate: 360deg;
   }
 }
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 /* #endregion Animations*/
+
+/* #region Media*/
+/* #endregion Media*/
+
+@media (max-width: 75rem) {
+  #about .frame {
+    box-shadow: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    flex: auto;
+    max-width: unset;
+    margin-bottom: 8rem;
+  }
+
+  #about .hover-doodle {
+    display: none;
+    height: 14rem;
+    max-height: 100%;
+  }
+
+  #about .hover-doodle img {
+    height: 100%;
+  }
+  #about .fish-carousel {
+    bottom: 18%;
+  }
+}
+
+@media (min-width: 92rem) {
+  #about .contents {
+    align-items: start;
+  }
+
+  #about .frame {
+    padding-bottom: 3rem;
+  }
+}
