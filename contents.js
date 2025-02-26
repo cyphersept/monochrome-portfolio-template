@@ -1,3 +1,26 @@
+// List of skills for the animated text carousel
+
+const skillList = [
+  "BS Comp Sci",
+  "Frontend",
+  "HTML",
+  "JS",
+  "CSS",
+  "Java",
+  "SQL",
+  "React",
+  "Webpack",
+  "Vite",
+  "Jest",
+  "Tailwind",
+  "APIs",
+  "Design",
+  "Illustration",
+  "English",
+  "Mandarin",
+  "French B2",
+];
+
 // Info to populate project cards with
 
 // name: Title of project to display
@@ -32,6 +55,14 @@ const projectList = [
     img: "./src/img/reengage.webp",
     desc: "Social platform to connect with peers tackling similar problems. Toast Dash Hackathon Finalist.",
     stack: "React, Vite, TailwindCSS",
+  },
+  {
+    name: "Natural Cure",
+    live: "https://shop-natural-cure.netlify.app/",
+    repo: "https://github.com/cyphersept/natural-cure",
+    img: "./src/img/naturalcure.webp",
+    desc: "Shopping app boilerplate with clientside routing and cart functionality, all made from scratch.",
+    stack: "React Router, React, Vite, TailwindCSS",
   },
   {
     name: "Battleship",
