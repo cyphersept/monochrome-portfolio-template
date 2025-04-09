@@ -7,10 +7,13 @@
     <title>Yuan Gao — Web Developer Portfolio</title>
     <link rel="stylesheet" href="./src/reset.css" />
     <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
     <link rel="icon" type="image/png" href="./src/img/plum.png" />
-    <script src="contents.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        /*to prevent Firefox FOUC, this must be here*/
+        let FF_FOUC_FIX;
+    </script>
 </head>
 
 <body>
@@ -285,6 +288,6 @@
     </main>
 </body>
 
-<script src="./src/script.js"></script>
+<script type="module" src="/src/main.js"></script>
 
 </html>

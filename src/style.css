@@ -16,6 +16,9 @@
   --section-pad-y: 2rem;
   font-size: 20px;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* #region Global Styles */
@@ -54,15 +57,6 @@ a.unstyled,
   width: 100%;
 }
 
-/* .frame::after {
-  content: "";
-  position: absolute;
-  outline: var(--b-width) solid var(--black);
-  width: 100%;
-  height: 100%;
-  left: -1rem;
-  top: -1rem;
-} */
 /* #endregion Global Styles */
 
 /* =============================================== */
@@ -214,7 +208,7 @@ main h1 {
   overflow: hidden;
   will-change: transform;
   position: absolute;
-  margin-left: -5rem;
+  margin-left: calc(var(--section-pad-x) * -2);
   z-index: -10;
 }
 

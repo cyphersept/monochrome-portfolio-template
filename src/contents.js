@@ -1,6 +1,6 @@
 // List of skills for the animated text carousel
 
-const skillList = [
+export const skillList = [
   "BS Comp Sci",
   "Frontend",
   "HTML",
@@ -31,7 +31,7 @@ const skillList = [
 // stack: A comma separated list of technologies used in the project.
 // (optional) type: set to "iframe" to display a slightly larger card with an iframe embed
 
-const projectList = [
+export const projectList = [
   {
     name: "Repalette",
     live: "https://cyphersept.github.io/repalette/",

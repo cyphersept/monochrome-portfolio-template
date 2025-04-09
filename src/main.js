@@ -1,9 +1,10 @@
 "use strict";
 
-// !!!!! IMPORTANT !!!!!
-// Make sure you initialize the project card info in contents.js!!
+import "./style.css";
+import Aos from "aos";
+import { skillList, projectList } from "./contents";
 
-AOS.init({ once: true, duration: 500 });
+Aos.init({ once: true, duration: 500 });
 
 // Make ripples follow mouse in header
 const headerBg = document.querySelector("header .frame");
