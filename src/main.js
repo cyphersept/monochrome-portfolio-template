@@ -94,35 +94,3 @@ function fillProjects() {
     document.getElementById("projects").appendChild(el);
   }
 }
-fillProjects();
-fillSkills();
-
-//         <section id="rps">
-//             <h1>Projects —
-//                 <a href="https://cyphersept.github.io/small-projects/rps" target="_blank" rel="noopener">Rock Paper Scissors</a></h1>
-//             <h3>Best of three
-//                 (<a>Source</a>)</h3>
-//             <div>
-//                 <iframe src="https://cyphersept.github.io/small-projects/rps" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8"></iframe>
-//             </div>
-//         </section>
-
-//         <section id="calculate">
-//             <h1>Projects —
-//                 <a href="https://cyphersept.github.io/small-projects/calculator" target="_blank" rel="noopener">Calculator</a></h1>
-//             <h3>Classic four function calculator, like you used to have
-//                 (<a>Source</a>)</h3>
-//             <div>
-//                 <iframe src="https://cyphersept.github.io/small-projects/calculator" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8"></iframe>
-//             </div>
-//         </section>
-
-//         <section id="doodle">
-//             <h1>Projects —
-//                 <a href="https://cyphersept.github.io/small-projects/etch" target="_blank" rel="noopener">Etch-a-Sketch</a></h1>
-//             <h3>Digital doodling
-//                 (<a>Source</a>)</h3>
-//             <div>
-//                 <iframe src="https://cyphersept.github.io/small-projects/etch" sandbox="allow-scripts" loading="lazy" style="--scalar: 0.8"></iframe>
-//             </div>
-//         </section>
