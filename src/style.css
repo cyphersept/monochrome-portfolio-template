@@ -52,7 +52,7 @@ a.unstyled,
 }
 
 .frame > .contents {
-  padding: 2rem;
+  padding: var(--section-pad-y);
   height: 100%;
   width: 100%;
 }
@@ -64,8 +64,8 @@ a.unstyled,
 /* =============================================== */
 
 nav {
-  padding: 1rem;
-  padding-right: 2rem;
+  padding: calc(var(--section-pad-y) / 2);
+  padding-right: calc(var(--section-pad-x) / 2);
   position: sticky;
   background-color: var(--white);
   z-index: 30;
@@ -175,10 +175,12 @@ main h1 {
 #about {
   font-size: 1.5rem;
   min-height: fit-content;
+  padding: var(--section-pad-y) 0;
 }
 
 #about h1 {
   margin-bottom: 2rem;
+  padding: 0 var(--section-pad-x);
 }
 
 #about .contents {
@@ -191,25 +193,35 @@ main h1 {
   max-width: calc(200% / 3);
   height: unset;
   padding: 2rem;
+  margin: 0 var(--section-pad-x);
   flex: 2 0 10rem;
 }
 
 #about .hover-doodle {
-  float: right;
   flex: 1 0 10rem;
-  padding-left: 2rem;
+  margin-right: var(--section-pad-x);
+}
+
+#about .hover-doodle img {
+  max-height: 80vh;
+}
+
+.carousel-wrapper {
+  --duration: 30s;
+  bottom: 30%;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  z-index: -10;
 }
 
 .fish-carousel {
-  --duration: 30s;
-  bottom: 30%;
-  display: flex;
-  width: 100vw;
-  overflow: hidden;
-  will-change: transform;
   position: absolute;
-  margin-left: calc(var(--section-pad-x) * -2);
-  z-index: -10;
+  bottom: 0;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  will-change: transform;
 }
 
 .fish-carousel.offset {
@@ -397,12 +409,12 @@ main h1 {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 3rem;
   border-right: var(--b-width) var(--black) solid;
 }
 
-#contact .credits {
-  padding: 3rem;
+#contact .credits,
+#contact .links {
+  padding: calc((var(--section-pad-x) + var(--section-pad-y)) / 2);
 }
 
 .credits h2 {
@@ -435,7 +447,7 @@ main h1 {
 
 .blob > label {
   margin-top: 4px;
-  font-size: clamp(1rem, 3.5vw, 2rem);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   text-align: center;
 }
 
@@ -455,6 +467,9 @@ main h1 {
 /* #region Footer*/
 /* =============================================== */
 
+footer {
+  margin-top: var(--section-pad-y);
+}
 footer a {
   background-color: var(--black);
   color: var(--white);
@@ -464,11 +479,7 @@ footer a {
   gap: 0.5rem;
   padding: 1rem;
 }
-
-/* #region Contact*/
-/* =============================================== */
-
-/* #endregion Contact */
+/* #endregion Footer*/
 
 /* #region Animations*/
 /* =============================================== */
@@ -617,7 +628,7 @@ footer a {
 /* #region Media*/
 /* #endregion Media*/
 
-@media (max-width: 75rem) {
+@media (max-width: 1080px) {
   #about .frame {
     box-shadow: none;
     outline: none;
@@ -628,23 +639,32 @@ footer a {
     margin-bottom: 10rem;
   }
 
-  #about .hover-doodle {
-    display: none;
-    height: 14rem;
-    max-height: 100%;
+  :root {
+    --section-pad-x: 2.5rem;
   }
 
-  #about .hover-doodle img {
-    height: 100%;
+  #about .hover-doodle {
+    display: none;
+  }
+
+  #contact .links {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+
+  #contact .links a {
+    margin-top: 0 !important;
+    max-width: 5rem;
   }
 }
 
-@media (min-width: 92rem) {
+@media (min-width: 80rem) {
   #about .contents {
     align-items: start;
   }
 
   #about .frame {
-    padding-bottom: 3rem;
+    font-size: 1.15em;
+    padding-bottom: 6rem;
   }
 }
