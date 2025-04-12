@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Reem Kufi";
-
   font-weight: 200 800;
   font-style: normal;
   src: url("ReemKufi-VariableFont_wght.ttf") format("truetype");
+  font-display: optional;
 }
 
 :root {
@@ -43,6 +43,10 @@ a.unstyled,
 .unstyled a {
   text-decoration: none;
   color: inherit;
+}
+
+a label {
+  cursor: pointer;
 }
 
 .frame {
@@ -258,16 +262,13 @@ main h1 {
 
 .carousel-wrapper {
   --duration: 30s;
-  bottom: 30%;
+  bottom: calc(30% - 1rem);
   position: absolute;
-  padding: 0;
   width: 100%;
   z-index: -10;
 }
 
 .fish-carousel {
-  position: absolute;
-  bottom: 0;
   display: flex;
   overflow: hidden;
   width: 100%;
@@ -275,7 +276,7 @@ main h1 {
 }
 
 .fish-carousel.offset {
-  transform: translateY(200%);
+  transform: translateY(100%);
   animation-delay: -2s;
 }
 
@@ -703,11 +704,15 @@ footer a {
     justify-content: end;
   }
 
+  .carousel-wrapper {
+    bottom: 20%;
+  }
+
   .burger {
     display: block;
   }
 
-  #show-burger:checked ~ .links {
+  #show-burger:not(:checked) ~ .links {
     transform: scaleY(0);
   }
 
