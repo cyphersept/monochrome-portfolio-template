@@ -1,6 +1,42 @@
-// List of skills for the animated text carousel
+const email = "./img/email-8-svgrepo-com.svg";
+const linkedin = "./img/external-link-svgrepo-com.svg";
+const github = "./img/github-mark.svg";
+const code = "./img/external-link-svgrepo-com.svg";
 
-export const skillList = [
+// List of links to display in contact section
+const linkList = [
+  { label: "Email", href: "mailto:ygao050@gmail.com", icon: email },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/ygao000/",
+    icon: linkedin,
+  },
+  { label: "Github", href: "https://github.com/cyphersept", icon: github },
+  {
+    label: "Site Code",
+    href: "https://github.com/cyphersept/monochrome-portfolio-template",
+    icon: code,
+  },
+];
+
+// Key information displayed in the header and about sections
+const info = {
+  name: "Yuan Gao",
+  pageTitle: "Yuan Gao — Web Developer Portfolio",
+  jobTitle: "Frontend Web Developer",
+  description:
+    "I'm a Montreal-based web developer with a keen interest in what makes the internet tick. With my background in freelance illustration, I combine sharp visuals with user-friendly functionality to deliver unique utilities via the convenience of the world wide web.",
+};
+
+// Footer link
+const footer = {
+  label: "cyphersept 2025",
+  href: "http://github.com/cyphersept/black-fish-white-fish-template",
+  icon: github,
+};
+
+// List of skills for the animated text carousel
+const skillList = [
   "BS Comp Sci",
   "Frontend",
   "HTML",
@@ -31,7 +67,7 @@ export const skillList = [
 // stack: A comma separated list of technologies used in the project.
 // (optional) type: set to "iframe" to display a slightly larger card with an iframe embed
 
-export const projectList = [
+const projectList = [
   {
     name: "Repalette",
     live: "https://cyphersept.github.io/repalette/",
@@ -120,13 +156,6 @@ export const projectList = [
     desc: "A modern design for tablet, mobile, and desktop, recreated with pixel-perfect precision.",
     stack: "HTML, Javascript, CSS",
   },
-  // {
-  //   name: "Rock Paper Scissors+",
-  //   live: "https://cyphersept.github.io/small-projects/rps",
-  //   repo: "https://github.com/cyphersept/small-projects/rps",
-  //   img: "./src/img/homepage-1.webp",
-  //   desc: "Best of three",
-  //   stack: "HTML, Javascript, CSS",
-  //   type: "iframe",
-  // },
 ];
+
+export { info, footer, linkList, skillList, projectList };

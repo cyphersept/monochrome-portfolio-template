@@ -410,6 +410,12 @@ main h1 {
 [data-n="6"] {
   --n: 6;
 }
+[data-n="7"] {
+  --n: 7;
+}
+[data-n="8"] {
+  --n: 8;
+}
 
 .stack {
   padding-left: 1rem;
