@@ -249,6 +249,9 @@ main h1 {
   padding: 2rem;
   margin: 0 var(--section-pad-x);
   flex: 2 0 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #about .hover-doodle {
@@ -345,18 +348,23 @@ main h1 {
   flex: 1 0 26rem;
 }
 
-.project img {
+.project .left {
   height: 100%;
   position: absolute;
   max-width: calc(100% / 3);
-  object-fit: cover;
   will-change: contents;
   transition: max-width 200ms ease-in-out;
   border-right: var(--b-width) solid var(--black);
   box-sizing: content-box;
   z-index: 10;
 }
-.project img:hover {
+
+.project .left img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.project .left:hover {
   max-width: 100%;
 }
 
@@ -382,8 +390,18 @@ main h1 {
   margin-top: 0.5rem;
 }
 
-.links a {
-  color: inherit;
+.project .links a {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: block;
+}
+
+.project .links img {
+  height: 1em;
+  width: 1em;
+}
+
+.project {
 }
 
 /* #endregion Projects */
@@ -481,6 +499,7 @@ main h1 {
 
 .credits p {
   font-size: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .blob {
@@ -492,14 +511,18 @@ main h1 {
   overflow: visible;
 }
 
-.blob svg {
+.blob .square {
   aspect-ratio: 1;
-  width: 8rem;
+  width: 100%;
   height: auto;
   padding: 1rem;
-  color: var(--white);
   background-color: var(--black);
   border-radius: 0.5rem;
+}
+
+.blob img {
+  height: auto;
+  width: 8rem;
 }
 
 .blob > label {
@@ -535,6 +558,10 @@ footer a {
   justify-content: center;
   gap: 0.5rem;
   padding: 1rem;
+}
+footer img {
+  height: 1em;
+  width: 1em;
 }
 /* #endregion Footer*/
 

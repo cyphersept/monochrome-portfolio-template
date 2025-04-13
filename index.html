@@ -73,11 +73,13 @@
             <h1>About</h1>
             <div class="contents">
                 <div class="left frame" data-aos="fade-down-right" data-aos-delay="1000">
-                    <p>
-                        <%= info.description %>
-                    </p>
+                    <% for( para of info.description) { %>
+                        <p>
+                            <%= para %>
+                        </p>
+                        <% } %>
                 </div>
-                <div class="carousel-wrapper" data-aos="fade-down-right" data-aos-delay="500">
+                <div class="carousel-wrapper" data-aos="fade-down-right" data-aos-delay="250" data-aos-offset="100">
                     <div class="fish-carousel">
                         <ul class="group">
                             <% for( const skill of skillList ) { %>
@@ -120,7 +122,9 @@
             <h1>My Projects</h1>
             <% projectList.map(p=> { %>
                 <article class="project frame" data-aos="flip-right">
-                    <img src=<%=p.img %> alt="Page screenshot" />
+                    <div class="left">
+                        <img src="<%= p.img %>" alt="Page screenshot" />
+                    </div>
                     <div class="contents">
                         <div class="info">
                             <h2>
@@ -131,21 +135,19 @@
                             </p>
                         </div>
                         <div class="links">
-                            <a href=<%=p.repo %> target="_blank" rel="noopener" class="repo" aria-label="project
-                                github">
-                                <img src="./src/img/github-mark.svg" alt="" height="1em" width="1em">
-                            </a>
+                            <% for( const link of p.links ) { %>
+                                <a href="<%= link.href %>" target="_blank" rel="noopener" class="repo" aria-label="<%=
+                                        link.label %>">
+                                    <img src="<%= link.iconSrc %>" alt="" height="1em" width="1em">
+                                </a>
+                                <% } %>
 
-                            <a href=<%=p.live %> target="_blank" rel="noopener" aria-label="project live site"
-                                class="live">
-                                <img src="./src/img/external-link-svgrepo-com.svg" alt="" height="1em" width="1em">
-                            </a>
                         </div>
                         <h3>Stack</h3>
                         <ul class="stack">
                             <% p.stack.split(", ").map( (item, index) => {%> 
-                                <li data-n=<%= index + 1 %>><%= item%></li>
-                             <%}) %>
+                                <li data-n=<%= index + 1 %>><%= item %></li>
+                             <% }) %>
                         </ul>
                     </div>
                 </article>
@@ -156,78 +158,35 @@
             <div class=" frame">
                                 <div class="links">
                                     <% for( let i=0; i < linkList.length; i++ ) { %>
-                                        <a class="unstyled blob" href=<%=linkList[i].href %>>
-                                            <%- linkList[i].icon.replace("<svg", `<svg data-aos="fade-down-right"
-                                                data-aos-anchor="#contact data-aos-delay=" ${i*200}"`) %>
-                                                <label>
-                                                    <%= linkList[i].label %>
-                                                </label>
+                                        <a class="unstyled blob" target="_blank" rel="noopener"
+                                            href="<%linkList[i].href %>" data-aos="fade-down-right"
+                                            data-aos-anchor="#contact" data-aos-delay="<%= i*200 %>">
+                                            <div class="square">
+                                                <img src="<%= linkList[i].iconSrc %>" alt="" width="1em" height="1em">
+                                            </div>
+                                            <label>
+                                                <%= linkList[i].label %>
+                                            </label>
                                         </a>
                                         <% } %>
-                                            <a class="unstyled blob email" href="mailto:ygao050@gmail.com">
-
-                                                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="1 3 22 18"
-                                                    data-aos="fade-down-right" data-aos-anchor="#contact">
-                                                    <rect x="3" y="5" width="18" height="14" rx="2" fill="currentColor"
-                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                                    <path d="m4 7 6.2 4.65a3 3 0 0 0 3.6 0L20 7" stroke="#1a1a1a"
-                                                        stroke-width="1.25" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                <label>Email</label>
-                                            </a>
-                                            <a class="unstyled blob linkedin"
-                                                href="https://www.linkedin.com/in/ygao000/">
-
-                                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
-                                                    data-aos="fade-down-right" data-aos-anchor="#contact"
-                                                    data-aos-delay="200">
-                                                    <path fill="currentColor"
-                                                        d="M28.778 1.004H3.191a2.185 2.185 0 0 0-2.186 2.159v25.672a2.186 2.186 0 0 0 2.186 2.161h25.612c1.2 0 2.175-.963 2.194-2.159V3.165a2.195 2.195 0 0 0-2.195-2.161h-.029.001zM9.9 26.562H5.446V12.251H9.9zM7.674 10.293a2.579 2.579 0 1 1 2.579-2.58v.004a2.577 2.577 0 0 1-2.577 2.577h-.003zm18.882 16.269h-4.441v-6.959c0-1.66-.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441V12.252h4.266v1.951h.058a4.686 4.686 0 0 1 4.22-2.312h-.009c4.5 0 5.332 2.962 5.332 6.817v7.855z" />
-                                                </svg>
-                                                <label>LinkedIn</label>
-                                            </a>
-                                            <a class="unstyled blob github" href="https://github.com/cyphersept">
-
-                                                <svg viewBox="-2 -4 100 100" xmlns="http://www.w3.org/2000/svg"
-                                                    data-aos="fade-down-right" data-aos-anchor="#contact"
-                                                    data-aos-delay="400">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
-                                                        fill="currentColor" />
-                                                </svg>
-                                                <label>Github</label>
-                                            </a>
-
-                                            <a class="unstyled blob site-source"
-                                                href="https://github.com/cyphersept/monochrome-portfolio-template">
-
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"
-                                                    data-aos="fade-down-right" data-aos-anchor="#contact"
-                                                    data-aos-delay="600"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                                                    <path
-                                                        d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
-                                                        fill="currentColor" />
-                                                </svg>
-                                                <label>Site Code</label>
-                                            </a>
                                 </div>
                                 <div class="credits contents">
                                     <h2>Credits</h2>
-                                    <p>Fish icons courtesy of <a href="https://thenounproject.com/creator/renzokbanget/"
-                                            rel="noopener" target="_blank">The Noun Project</a></p>
-                                    <p>Vectors and icons by <a href="https://www.svgrepo.com" rel="noopener"
+                                    <p>Vectors and icons courtesy of <a href="https://www.svgrepo.com" rel="noopener"
                                             target="_blank">SVG
-                                            Repo</a></p>
+                                            Repo</a> and <a href="https://thenounproject.com/creator/renzokbanget/"
+                                            rel="noopener" target="_blank">The Noun Project.</a></p>
+                                    <p>Site template created by me! <span style="white-space: nowrap">( ˶ˆᗜˆ˵ )</span> ✧
+                                    </p>
 
                                 </div>
                     </div>
         </section>
 
         <footer>
-            <a href=<%=footer.href %>> <svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
-                    <img src=<%=footer.icon %> alt="" srcset="">
-                </svg><span>
+            <a href=<%=footer.href %> rel="noopener" target="_blank">
+                <img src="<%= footer.iconSrc %>" alt="" height="1em" width="1em">
+                <span>
                     <%= footer.label %>
                 </span></a>
         </footer>
