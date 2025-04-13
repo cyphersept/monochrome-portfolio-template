@@ -17,10 +17,14 @@ const linkList = [
     href: "https://www.linkedin.com/in/ygao000/",
     iconSrc: linkedin,
   },
-  { label: "Github", href: "https://github.com/cyphersept", iconSrc: github },
+  {
+    label: "Github",
+    href: "https://www.github.com/cyphersept",
+    iconSrc: github,
+  },
   {
     label: "Site Code",
-    href: "https://github.com/cyphersept/monochrome-portfolio-template",
+    href: "https://www.github.com/cyphersept/monochrome-portfolio-template",
     iconSrc: code,
   },
 ];
@@ -42,7 +46,7 @@ const info = {
 // Footer link
 const footer = {
   label: "cyphersept 2025",
-  href: "http://github.com/cyphersept/black-fish-white-fish-template",
+  href: "http://www.github.com/cyphersept/black-fish-white-fish-template",
   iconSrc: github,
 };
 
@@ -72,6 +76,7 @@ const skillList = [
 
 // name: Title of project to display
 // img: Relative path to image file to display
+// imgAlt: Alt text for images. Fill these out to improve your SEO
 // desc: Short description of project
 // stack: A comma separated list of technologies used in the project.
 // links: list of project-relevant links to display on card
@@ -80,17 +85,18 @@ const projectList = [
   {
     name: "Repalette",
     img: "./src/img/repalette-demo.gif",
+    imgAlt: "",
     desc: "Lightning-fast and pixel-perfect palette swaps with bulk downloads.",
     stack: "Canvas API, File API, HTML, Javascript, CSS",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/repalette",
+        href: "https://www.github.com/cyphersept/repalette",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://cyphersept.github.io/repalette/",
+        href: "https://www.cyphersept.github.io/repalette/",
         iconSrc: link,
       },
     ],
@@ -98,17 +104,18 @@ const projectList = [
   {
     name: "Weather App",
     img: "./src/img/weather.webp",
+    imgAlt: "",
     desc: "Cyberpunk weather updates",
     stack: "React, TailwindCSS, OpenMeteo API, Vite",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/react-weather",
+        href: "https://www.github.com/cyphersept/react-weather",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://cyberpunk-weather.netlify.app/",
+        href: "https://www.cyberpunk-weather.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -116,17 +123,18 @@ const projectList = [
   {
     name: "Re:Engage",
     img: "./src/img/reengage.webp",
+    imgAlt: "",
     desc: "Social platform to connect with peers tackling similar problems. Toast Dash Hackathon Finalist.",
     stack: "React, Vite, TailwindCSS",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/toast-dash",
+        href: "https://www.github.com/cyphersept/toast-dash",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://status-share-dash.netlify.app/",
+        href: "https://www.status-share-dash.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -134,17 +142,19 @@ const projectList = [
   {
     name: "Natural Cure",
     img: "./src/img/naturalcure.webp",
+    imgAlt:
+      "Soothing cottagecore lavender and purple shopping site layout for Natural Cure",
     desc: "Shopping app boilerplate with clientside routing and cart functionality, all made from scratch.",
     stack: "React Router, React, Vite, TailwindCSS",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/natural-cure",
+        href: "https://www.github.com/cyphersept/natural-cure",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://shop-natural-cure.netlify.app/",
+        href: "https://www.shop-natural-cure.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -152,17 +162,19 @@ const projectList = [
   {
     name: "Battleship",
     img: "./src/img/battleship.webp",
+    imgAlt:
+      "Game with two light blue battleship grids in front of wavy ocean overlay",
     desc: "A faithful recreation of a timeless classic.",
     stack: "Jest, Webpack, HTML, Javascript, CSS",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/battleship",
+        href: "https://www.github.com/cyphersept/battleship",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://cyphersept.github.io/battleship/",
+        href: "https://www.cyphersept.github.io/battleship/",
         iconSrc: link,
       },
     ],
@@ -170,17 +182,19 @@ const projectList = [
   {
     name: "Flag Memory",
     img: "./src/img/flag-memory.webp",
+    imgAlt:
+      "Online quiz game with large flag icons against a black and pink background",
     desc: "How well can you remember the flags of the world? Try it in multiple languages!",
     stack: "React, Vite, FlagsAPI",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/memory-game",
+        href: "https://www.github.com/cyphersept/memory-game",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://flag-memory.netlify.app/",
+        href: "https://www.flag-memory.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -188,17 +202,18 @@ const projectList = [
   {
     name: "CV Creator",
     img: "./src/img/cv-maker.webp",
+    imgAlt: "Black and beige professional resume template for Sun Wukong",
     desc: "Build a sleek, minimalist professional CV from the comfort of your browser.",
     stack: "React, Typescript, Vite",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/cv-application",
+        href: "https://www.github.com/cyphersept/cv-application",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://cypher-cv.netlify.app/",
+        href: "https://www.cypher-cv.netlify.app/",
         iconSrc: link,
       },
     ],
@@ -206,17 +221,19 @@ const projectList = [
   {
     name: "Cardmaker",
     img: "./src/img/cardmaker.webp",
+    imgAlt:
+      "Row of parchment background skill cards with wax seal below a text input box",
     desc: "Create prototype cards for a custom board game straight from your notes in a single click.",
     stack: "HTML, Javascript, CSS",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/cardmaker",
+        href: "https://www.github.com/cyphersept/cardmaker",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://cyphersept.github.io/cardmaker/",
+        href: "https://www.cyphersept.github.io/cardmaker/",
         iconSrc: link,
       },
     ],
@@ -224,17 +241,18 @@ const projectList = [
   {
     name: "Signup Page",
     img: "./src/img/signup.webp",
+    imgAlt: "Relaxing calming green and brown matcha themed signup page",
     desc: "Responsive sign up form with input validation and screen-reader accessibility.",
     stack: "HTML, Javascript, CSS",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/signup-page",
+        href: "https://www.github.com/cyphersept/signup-page",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://cyphersept.github.io/signup-page",
+        href: "https://www.cyphersept.github.io/signup-page",
         iconSrc: link,
       },
     ],
@@ -242,17 +260,18 @@ const projectList = [
   {
     name: "Dash Template",
     img: "./src/img/dash.webp",
+    imgAlt: "Dark blue and teal cute whimsical dashboard site preview",
     desc: "A fun and cheery dashboard layout with a crafty feel. WCAG level AA accessible.",
     stack: "HTML, Javascript, CSS",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/dashboard-homepage",
+        href: "https://www.github.com/cyphersept/dashboard-homepage",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://cyphersept.github.io/dashboard-homepage/",
+        href: "https://www.cyphersept.github.io/dashboard-homepage/",
         iconSrc: link,
       },
     ],
@@ -260,17 +279,39 @@ const projectList = [
   {
     name: "Homepage Template",
     img: "./src/img/homepage-1.webp",
+    imgAlt:
+      "Blue and white professional portfolio site preview with woman named Ashley Williams",
     desc: "A modern design for tablet, mobile, and desktop, recreated with pixel-perfect precision.",
     stack: "HTML, Javascript, CSS",
     links: [
       {
         label: "repo",
-        href: "https://github.com/cyphersept/responsive-homepage",
+        href: "https://www.github.com/cyphersept/responsive-homepage",
         iconSrc: githubReverse,
       },
       {
         label: "live site",
-        href: "https://cyphersept.github.io/responsive-homepage/",
+        href: "https://www.cyphersept.github.io/responsive-homepage/",
+        iconSrc: link,
+      },
+    ],
+  },
+  {
+    name: "Portfolio Template",
+    img: "./src/img/monochrome.webp",
+    imgAlt:
+      "Eyecatching modern lack and white koi garden themed high contrast portfolio template",
+    desc: "No-code, SEO-optimized, lightning-fast template compiled from a single text file.",
+    stack: "EJS, Vite, HTML, Javascript, CSS",
+    links: [
+      {
+        label: "repo",
+        href: "https://www.github.com/cyphersept/monochrome-portfolio-template",
+        iconSrc: githubReverse,
+      },
+      {
+        label: "live site",
+        href: "https://www.cyphersept.github.io/monochrome-portfolio-template/",
         iconSrc: link,
       },
     ],

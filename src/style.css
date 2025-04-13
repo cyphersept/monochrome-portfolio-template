@@ -18,6 +18,7 @@
   font-size: 20px;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
+  image-rendering: optimizeQuality;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

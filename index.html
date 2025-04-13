@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="<%= info.description %>">
+    <meta name="author" content="<%= info.name %>">
     <title>
         <%= info.pageTitle %>
     </title>
@@ -123,7 +125,7 @@
             <% projectList.map(p=> { %>
                 <article class="project frame" data-aos="flip-right">
                     <div class="left">
-                        <img src="<%= p.img %>" alt="Page screenshot" />
+                        <img src="<%= p.img %>" alt="<%= p.imgAlt %>" />
                     </div>
                     <div class="contents">
                         <div class="info">
