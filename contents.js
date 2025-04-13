@@ -1,21 +1,21 @@
-const email = "./img/email-8-svgrepo-com.svg";
-const linkedin = "./img/external-link-svgrepo-com.svg";
-const github = "./img/github-mark.svg";
-const code = "./img/external-link-svgrepo-com.svg";
+const email = "./src/img/email.svg";
+const linkedin = "./src/img/linkedin.svg";
+const github = "./src/img/github-mark.svg";
+const code = "./src/img/code.svg";
 
 // List of links to display in contact section
 const linkList = [
-  { label: "Email", href: "mailto:ygao050@gmail.com", icon: email },
+  { label: "Email", href: "mailto:ygao050@gmail.com", iconSrc: email },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/ygao000/",
-    icon: linkedin,
+    iconSrc: linkedin,
   },
-  { label: "Github", href: "https://github.com/cyphersept", icon: github },
+  { label: "Github", href: "https://github.com/cyphersept", iconSrc: github },
   {
     label: "Site Code",
     href: "https://github.com/cyphersept/monochrome-portfolio-template",
-    icon: code,
+    iconSrc: code,
   },
 ];
 
@@ -32,7 +32,7 @@ const info = {
 const footer = {
   label: "cyphersept 2025",
   href: "http://github.com/cyphersept/black-fish-white-fish-template",
-  icon: github,
+  iconSrc: github,
 };
 
 // List of skills for the animated text carousel
